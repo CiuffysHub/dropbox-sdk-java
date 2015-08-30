@@ -1,5 +1,19 @@
 # Dropbox Core SDK for Java 6+
 
+#Restore .encrypted files on Dropbox automatically
+
+-Download the .zip of this repository. You can keep only the DropboxFileRestorer.jar file. This java file is a simplified version of the application which source code is shared in this repository, made to be deployed fast.
+
+-Run the DropboxFileRestorer.jar.
+
+-Copy the link in the first text box in a browser and click "allow".
+
+-Copy the code in the second text box. Currently this application is still under development and can only be used by 100 different accounts. If you can't run authenticate, contact me.
+
+-Once clicked the "List Encrypted Files" button, the application will start the authentication process. Since the app uses Dropbox API code, which by the way is shared in this repository, none of your personal login data is actually sent over the connection.
+
+-The listbox should now be filled with all the files containing "encrypted" in your dropbox, deleted or not. Select the ones you want to restore and click "Recover". Dropbox will start downloading the respective non-encrypted files. Once done, you will then be able to deletethe encrypted files without data loss. This process is possible thanks to Dropbox feature to save old copies of edited files. No file will be deleted, renamed or created during this process, this application just restores the old copies. You could do that by your own on dropbox.com, but this is aimed to help you recover many files with far less effort, worth using only if hundreds of files have been compromised.
+
 #The Fork
 
 I initially forked this repository from the user Ghajba to deal with a Cryptolocker case as a consqeunce to the aftermath of an incident response session. I then decided to publish the edits to the original Dropbox API and the application I made to restore encrypted files on Dropbox. Along with the the modified API source you can compile yourself, I added the code for a an example of application you can find under DropboxAPI/src, as Eclipse source files (.classpath and .project are also there for debugging reasons). The required libraries for the compilation can be found under /DropboxAPI/lib: jackson-core and servlet-api for the Dropbox API, dropbox-core and jackson-core for the Application if you don't need deleted files support (in particular, support was added for the methods "getMetadataWithChildren" and "SearchFileAndFolderNames", make sure you delete the "true" value from the research if that is returning an error), or the "INCLUDE_DELETED" Dropbox Forked API version if you need support for the deleted files. If you need a compiled version for personal usage, compile it yourself or contact me privately in Europe day time. The "D.java" file is a very early scracth prototype of a simple swing layout builder, which is not related to Dropbox API by any mean.
