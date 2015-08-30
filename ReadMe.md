@@ -1,5 +1,14 @@
 # Dropbox Core SDK for Java 6+
 
+#The Fork
+
+I initially forked this repository from the user Ghajba to deal with a Cryptolocker case as a consqeunce to the aftermath of an incident response session. I then decided to publish the edits to the original Dropbox API and the application I made to restore encrypted files on Dropbox. Along with the the modified API source you can compile yourself, I added the code for a an example of application you can find under DropboxAPI/src, as Eclipse source files (.classpath and .project are also there for debugging reasons). The required libraries for the compilation can be found under /DropboxAPI/lib: jackson-core and servlet-api for the Dropbox API, dropbox-core and jackson-core for the Application if you don't need deleted files support (in particular, support was added for the methods "getMetadataWithChildren" and "SearchFileAndFolderNames", make sure you delete the "true" value from the research if that is returning an error), or the "INCLUDE_DELETED" Dropbox Forked API version if you need support for the deleted files. If you need a compiled version for personal usage, compile it yourself or contact me privately in Europe day time.
+
+- Twitter: @ciuffysrise
+- Email: ciuffysrise@gmail.com
+
+#Introduction
+
 A Java library to access [Dropbox's HTTP-based Core API](https://www.dropbox.com/developers/core/docs).
 
 License: [MIT](License.txt)
