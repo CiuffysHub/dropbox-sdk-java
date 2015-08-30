@@ -1641,7 +1641,7 @@ public final class DbxClient
         if (query.length() == 0) throw new IllegalArgumentException("'query' can't be empty");
 
         String apiPath = "1/search/auto" + basePath;
-        String[] params = {"query", query};
+        String[] params = {"include_deleted", "true", "query", query};
 
         return doPost(host.api, apiPath, params, null, new DbxRequestUtil.ResponseHandler<List<DbxEntry>>()
         {
